@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
-
+  
 
 <head>
     <meta charset="utf-8">
@@ -30,11 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 6.2.0"></head>
+ 
 
-
-
-
-<body>
+  <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -305,8 +303,7 @@
     </nav>
 
 </header>
-
-    <div class="bg-cover pd-header about-cover">
+ <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -504,9 +501,7 @@
 </main>
 
 
-
-
-    <footer class="page-footer bg-color">
+ <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
@@ -624,9 +619,7 @@
 </footer>
 
 <div class="progress-bar"></div>
-
-
-    <!-- 搜索遮罩框 -->
+ <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -729,8 +722,7 @@ $(function () {
     searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
-
-    <!-- 回到顶部按钮 -->
+ <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -746,8 +738,7 @@ $(function () {
     <script src="/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
+ <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -762,29 +753,31 @@ $(function () {
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
-
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-	
-    
-
-    
-
+ 
+    <script
+      src="/libs/others/clicklove.js"
+      async="async"
+    ></script>
+     
+    <script
+      async
+      src="/libs/others/busuanzi.pure.mini.js"
+    ></script>
+           
+    <script
+      src="/libs/instantpage/instantpage.js"
+      type="module"
+    ></script>
     
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
-
-</body>
-
+    <script type="text/javascript">
+      //只在桌面版网页启用特效
+      var windowWidth = $(window).width();
+      if (windowWidth > 768) {
+        document.write(
+          '<script type="text/javascript" src="/js/sakura.js"><\/script>'
+        );
+      }
+    </script>
+  </body>
 </html>
