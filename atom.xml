@@ -6,7 +6,7 @@
   <link href="https://yibingzhi.github.io/atom.xml" rel="self"/>
   
   <link href="https://yibingzhi.github.io/"/>
-  <updated>2022-08-09T09:19:23.940Z</updated>
+  <updated>2022-08-13T10:12:23.180Z</updated>
   <id>https://yibingzhi.github.io/</id>
   
   <author>
@@ -17,23 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://yibingzhi.github.io/2022/08/09/hello-world/"/>
-    <id>https://yibingzhi.github.io/2022/08/09/hello-world/</id>
-    <published>2022-08-09T09:19:23.940Z</published>
-    <updated>2022-08-09T09:19:23.940Z</updated>
+    <title>博客第一篇</title>
+    <link href="https://yibingzhi.github.io/2022/08/13/bo-ke-di-yi-pian/"/>
+    <id>https://yibingzhi.github.io/2022/08/13/bo-ke-di-yi-pian/</id>
+    <published>2022-08-13T09:47:28.347Z</published>
+    <updated>2022-08-13T10:12:23.180Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;博客第一篇&quot;&gt;&lt;a href=&quot;#博客第一篇&quot; class=&quot;headerlink&quot; title=&quot;博客第一篇&quot;&gt;&lt;/a&gt;博客第一篇&lt;/h1&gt;&lt;p&gt;终于 在我的捣鼓之下 博客算是搭建起来了  其实也不是很难 但毕竟初学者嘛&lt;/p&gt;
+&lt;h3</summary>
         
       
     
     
     
+    
+    <category term="-Typora -Markdown" scheme="https://yibingzhi.github.io/tags/Typora-Markdown/"/>
     
   </entry>
   
