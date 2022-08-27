@@ -1,43 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>翌冰之</title>
-  
-  <subtitle>翌冰之</subtitle>
-  <link href="https://yibingzhi.github.io/atom.xml" rel="self"/>
-  
-  <link href="https://yibingzhi.github.io/"/>
-  <updated>2022-08-13T10:12:23.180Z</updated>
-  <id>https://yibingzhi.github.io/</id>
-  
-  <author>
-    <name>翌冰之</name>
-    
-  </author>
-  
-  <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>博客第一篇</title>
-    <link href="https://yibingzhi.github.io/2022/08/13/bo-ke-di-yi-pian/"/>
-    <id>https://yibingzhi.github.io/2022/08/13/bo-ke-di-yi-pian/</id>
-    <published>2022-08-13T09:47:28.347Z</published>
-    <updated>2022-08-13T10:12:23.180Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;博客第一篇&quot;&gt;&lt;a href=&quot;#博客第一篇&quot; class=&quot;headerlink&quot; title=&quot;博客第一篇&quot;&gt;&lt;/a&gt;博客第一篇&lt;/h1&gt;&lt;p&gt;终于 在我的捣鼓之下 博客算是搭建起来了  其实也不是很难 但毕竟初学者嘛&lt;/p&gt;
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    
-    <category term="-Typora -Markdown" scheme="https://yibingzhi.github.io/tags/Typora-Markdown/"/>
-    
-  </entry>
-  
-</feed>
+
+appID: wx571415d0f09e2955
+
+appsecret: eb73d3fa9222e4c83b27e153b942dbf5
+
+翌冰之 o6wNR54vaj3CrbtUAfONiSrkknus
+南凝纱 o6wNR5052Bp5a90q3V6dScFcpjrI
+
+模板id	_Jlr-ON7QBCEsPDTmWVJvtJNe_7V42uRvYEhpzlMyfA
+
+
+
+echo "# weixin" >> README.md
+git init
+git add
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/yibingzhi/weixin.git
+git push -u origin main
+
+
+
+
+
+{{date.DATA}} 
+地区：{{region.DATA}} 
+天气：{{weather.DATA}} 
+最低气温：{{min_temp.DATA}} 
+最高气温：{{max_temp.DATA}} 
+当前气温：{{temp.DATA}} 
+当前风向：{{wind_dir.DATA}} 
+pm2.5值：{{pm2p5.DATA}} 
+空气质量：{{category.DATA}} 
+日出时间：{{sunrise.DATA}} 
+日落时间：{{sunset.DATA}} 
+今天是我们恋爱的第{{love_day.DATA}}天 
+{{birthday1.DATA}} 
+{{birthday2.DATA}} 
+今日建议：{{proposal.DATA}}
+{{chp.DATA}}
+
+
+
+
+{{date.DATA}} 
+地区：{{region.DATA}} 
+天气：{{weather.DATA}} 
+最低气温：{{min_temp.DATA}} 
+最高气温：{{max_temp.DATA}} 
+当前气温：{{temp.DATA}} 
+当前风向：{{wind_dir.DATA}} 
+pm2.5值：{{pm2p5.DATA}} 
+空气质量：{{category.DATA}} 
+日出时间：{{sunrise.DATA}} 
+日落时间：{{sunset.DATA}} 
+今日建议：{{proposal.DATA}}
+{{chp.DATA}}
+
+{{note_en.DATA}} 
+{{note_ch.DATA}}
+
+
+
+
+
+
+
+
+
+
+
+config get requirepass
+
+ Dreamweaver 
