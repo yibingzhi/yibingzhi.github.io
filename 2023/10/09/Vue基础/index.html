@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>表情 | 翌冰之</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/touxiang.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>翌冰之</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;翌冰之</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>表情</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/9
+        </span>
+        
+        <span class="category">
+            <a href="/categories/Vue/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Vue
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%B5%84%E6%BA%90/" style="color: #00a596">资源</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Vue/" style="color: #00a596">Vue</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="Vue-基础"><a href="#Vue-基础" class="headerlink" title="Vue 基础"></a>Vue 基础</h2><h3 id="插值-v-bind"><a href="#插值-v-bind" class="headerlink" title="插值    v-bind"></a>插值    v-bind</h3><blockquote>
+<p>v-bind所绑定的数据是不可以影响 data 内部的变量的，但data内部的变量变化时，可以影响v-bind所绑定的内容。</p>
+</blockquote>
+<pre><code class="vue"> &lt;div id=&quot;app&quot;&gt;
+      &lt;!-- 01-静态文本 --&gt;
+      &lt;h1&gt;你好！明昊&lt;/h1&gt;
+      &lt;!-- 02-动态文本 --&gt;
+      &lt;h1&gt;你好！&#123;&#123;name&#125;&#125;&lt;/h1&gt;   // 普通插值  结果为  你好！ 明昊
+     
+      &lt;a v-bind:href=&quot;link&quot;&gt;链接&lt;/a&gt; //单项数据绑定
+   
+      &lt;a :href=&quot;link&quot;&gt;链接&lt;/a&gt; //单项数据绑定 简写   
+    
+   &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      name: &quot;眀昊&quot;
+      link: &quot;https://baidu.com&quot;,
+    &#125;;
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);  
+</code></pre>
+<h3 id="V-for"><a href="#V-for" class="headerlink" title="V-for"></a>V-for</h3><pre><code class="vue">&lt;div id=&quot;app&quot;&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;todo in todos&quot;&gt;&#123;&#123; todo &#125;&#125;&lt;/li&gt;   //渲染 todos 数组元素  todo自己起的名字
+        &lt;li v-for=&quot;(todo, index) in todos&quot;&gt;&#123;&#123;index + 1&#125;&#125;. &#123;&#123; todo &#125;&#125;&lt;/li&gt; //index 是索引 就是 123456 这些  可以给index+1
+        &lt;li v-for=&quot;todo in todos&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; :checked=&quot;todo.complete&quot; /&gt;&#123;&#123;todo.content&#125;&#125;   // 渲染对象类型的  
+        &lt;/li&gt;
+      &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      // todos: [&quot;把项目做完&quot;, &quot;去超市购物&quot;, &quot;看10分钟的书&quot;],
+      todos: [
+        &#123;
+          content: &quot;把项目做完&quot;,
+          complete: true,
+        &#125;,
+        &#123;
+          content: &quot;去超市购物&quot;,
+          complete: false,
+        &#125;,
+        &#123;
+          content: &quot;看10分钟的书&quot;,
+          complete: false,
+        &#125;,
+      ],
+    &#125;;
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="V-show-和-v-if"><a href="#V-show-和-v-if" class="headerlink" title="V-show 和 v- if"></a>V-show 和 v- if</h3><blockquote>
+<p>v-show 和v-if 都是条件渲染  真时显示元素 假时隐藏元素  用法差不多一样</p>
+<p>区别就是 v-show 不显示 是让其display属性为none  v-if 直接把代码pass了</p>
+<p>v-if还有v-else if 等等等等能一直连用 </p>
+<p>当v-if后面表达式的值为true的时候显示v-if所在的元素<br>当v-if后面表达式的值为false的时候显示v-else所在的元素</p>
+</blockquote>
+<pre><code class="vue"> &lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;question&quot;&gt;
+        &lt;p&gt;问：Vue 是一个什么样的框架？&lt;/p&gt;
+        &lt;p v-show=&quot;showAnswer&quot; class=&quot;answer&quot;&gt;  //
+          答：Vue 是一套用于构建用户界面的渐进式框架。
+        &lt;/p&gt;
+        &lt;button @click=&quot;showAnswer = !showAnswer&quot;&gt;
+          &#123;&#123; showAnswer ? "隐藏" : "显示" &#125;&#125;答案
+        &lt;/button&gt;
+          
+    &lt;p v-if=&quot;score&gt;=90&quot;&gt;优秀&lt;/p&gt;
+    &lt;p v-else-if=&quot;score&gt;=60&quot;&gt;及格&lt;/p&gt;
+    &lt;p v-else&gt;不及格&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">// 示例：事件处理和响应性入门
+const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      showAnswer: false,
+      score: 50,
+    &#125;;
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<blockquote>
+<p><strong>当需要在显示与隐藏之间切换很频繁时, 使用v-show</strong><br><strong>当只有一次切换时, 使用 v-if</strong></p>
+</blockquote>
+<h3 id="Vue-Computed-计算属性"><a href="#Vue-Computed-计算属性" class="headerlink" title="Vue Computed 计算属性"></a>Vue Computed 计算属性</h3><blockquote>
+<p>计算属性  简言之就是复杂的属性  就跟data里头的属性差不多一样的 不过这个比较复杂 需要方法计算出来</p>
+</blockquote>
+<pre><code class="vue">&lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;question&quot;&gt;
+        &lt;p&gt;问：Vue 是一个什么样的框架？&lt;/p&gt;
+        &lt;p v-show=&quot;showAnswer&quot; class=&quot;answer&quot;&gt;
+          答：Vue 是一套用于构建用户界面的渐进式框架。
+        &lt;/p&gt;
+        &lt;button @click=&quot;showAnswer = !showAnswer&quot;&gt;&#123;&#123; label &#125;&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      showAnswer: false,
+    &#125;;
+  &#125;,
+  computed: &#123;
+    label() &#123;
+      return this.showAnswer ? &quot;隐藏答案&quot; : &quot;显示答案&quot;;
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="Vue-Methods-方法-函数"><a href="#Vue-Methods-方法-函数" class="headerlink" title="Vue Methods 方法&#x2F;函数"></a>Vue Methods 方法&#x2F;函数</h3><blockquote>
+<p>就是写 方法  函数 的 地方</p>
+</blockquote>
+<pre><code class="vue">   &lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;question&quot;&gt;
+        &lt;p&gt;问：Vue 是一个什么样的框架？&lt;/p&gt;
+        &lt;p v-show=&quot;showAnswer&quot; class=&quot;answer&quot;&gt;
+          答：Vue 是一套用于构建用户界面的渐进式框架。
+        &lt;/p&gt;
+        &lt;button @click=&quot;toggleAnswer&quot;&gt;&#123;&#123; label &#125;&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      showAnswer: false,
+    &#125;;
+  &#125;,
+  computed: &#123;
+    label() &#123;
+      return this.showAnswer ? &quot;隐藏答案&quot; : &quot;显示答案&quot;;
+    &#125;,
+  &#125;,
+  methods: &#123;
+    toggleAnswer() &#123;
+      this.showAnswer = !this.showAnswer;
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="Vue-Watch-监听器"><a href="#Vue-Watch-监听器" class="headerlink" title="Vue Watch 监听器"></a>Vue Watch 监听器</h3><blockquote>
+<p>watch是vue内部提供的一个用于侦听功能的更通用的方法，其用来响应数据的变化，通过特定的数据变化驱动一些操作。<br>vue官方文档解释当需要在数据变化时执行异步或开销较大的操作时，推荐使用该方法。</p>
+<p>我的理解  就跟方法一样 不过方法名字是要监听的属性  这属性一变化 就执行 这里头的方法</p>
+</blockquote>
+<pre><code class="vue">    &lt;div id=&quot;app&quot;&gt;
+      &lt;div class=&quot;question&quot;&gt;
+        &lt;p&gt;问：Vue 是一个什么样的框架？&lt;/p&gt;
+        &lt;p v-show=&quot;showAnswer&quot; class=&quot;answer&quot;&gt;
+          答：Vue 是一套用于构建用户界面的渐进式框架。
+        &lt;/p&gt;
+        &lt;button @click=&quot;toggleAnswer&quot;&gt;&#123;&#123; label &#125;&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">// 示例：使用 watch 监听数据变化
+const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      showAnswer: false,
+      countDown: 5,
+      timer: null,
+    &#125;;
+  &#125;,
+  computed: &#123;
+    label() &#123;
+      return this.showAnswer ? &quot;隐藏答案 &quot; + this.countDown : &quot;显示答案&quot;;
+    &#125;,
+  &#125;,
+  methods: &#123;
+    toggleAnswer() &#123;
+      this.showAnswer = !this.showAnswer;
+    &#125;,
+  &#125;,
+  watch: &#123;
+    showAnswer(newVal, oldVal) &#123;      // 监听  showAnswer 属性 
+      if (newVal) &#123;
+        this.countDown = 5;
+        if (this.timer) &#123;
+          clearInterval(this.timer);
+          this.timer = null;
+        &#125;
+        // 5秒后关闭答案
+        this.timer = setInterval(() =&gt; &#123;
+          this.countDown -= 1;
+          if (this.countDown === 0) &#123;
+            this.showAnswer = false;
+            clearInterval(this.timer);
+            this.timer = null;
+          &#125;
+        &#125;, 1000);
+      &#125;
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><blockquote>
+<p>v-model  双向数据绑定  是可以影响 data 内部的变量的，data内部的变量变化时，可以影响v-model所绑定的内容。 </p>
+</blockquote>
+<pre><code class="vue"> &lt;div id=&quot;app&quot;&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;input-field&quot;&gt;
+          &lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;
+          &lt;input
+            id=&quot;username&quot;
+            type=&quot;text&quot;
+            @input=&quot;handleInput&quot;
+            :value=&quot;username&quot;
+          /&gt;
+          &lt;button @click=&quot;resetUsername&quot;&gt;重置&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;result&quot;&gt;
+          &lt;p&gt;你输入的用户名是：&#123;&#123; username &#125;&#125;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      username: &quot;&quot;,
+    &#125;;
+  &#125;,
+  methods: &#123;
+    handleInput(e) &#123;
+      this.username = e.target.value;
+    &#125;,
+    resetUsername() &#123;
+      this.username = &quot;&quot;;
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="vue-表单处理-例子"><a href="#vue-表单处理-例子" class="headerlink" title="vue  表单处理 例子"></a>vue  表单处理 例子</h3><pre><code class="vue">   &lt;div id=&quot;app&quot;&gt;
+      &lt;form @submit.prevent=&quot;handleSubmit&quot;&gt;
+        &lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;
+        &lt;input id=&quot;username&quot; type=&quot;text&quot; v-model=&quot;username&quot; /&gt;
+        &lt;label for=&quot;gender&quot;&gt;性别：&lt;/label&gt;
+        &lt;div id=&quot;gender&quot; class=&quot;radio-group&quot;&gt;
+          &lt;input
+            name=&quot;gender&quot;
+            type=&quot;radio&quot;
+            value=&quot;male&quot;
+            v-model=&quot;gender&quot;
+          /&gt;&lt;span&gt;男&lt;/span&gt;
+          &lt;input
+            name=&quot;gender&quot;
+            type=&quot;radio&quot;
+            value=&quot;female&quot;
+            v-model=&quot;gender&quot;
+          /&gt;&lt;span&gt;女&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;label for=&quot;interest&quot;&gt;兴趣：&lt;/label&gt;
+        &lt;div id=&quot;interest&quot; class=&quot;checkbox-group&quot;&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;frontend&quot;
+            v-model=&quot;interests&quot;
+          /&gt;&lt;span&gt;前端&lt;/span&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;backend&quot;
+            v-model=&quot;interests&quot;
+          /&gt;&lt;span&gt;后端&lt;/span&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;fullstack&quot;
+            v-model=&quot;interests&quot;
+          /&gt;&lt;span&gt;全栈&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;label for=&quot;occupation&quot;&gt;职业：&lt;/label&gt;
+        &lt;select
+          name=&quot;occupation&quot;
+          id=&quot;occupation&quot;
+          v-model=&quot;occupation&quot;
+        &gt;
+          &lt;option value=&quot;frontend&quot;&gt;前端工程师&lt;/option&gt;
+          &lt;option value=&quot;backend&quot;&gt;后端工程师&lt;/option&gt;
+          &lt;option value=&quot;fullstack&quot;&gt;全栈工程师&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;label for=&quot;intro&quot;&gt;自我介绍：&lt;/label&gt;
+        &lt;textarea id=&quot;intro&quot; rows=&quot;10&quot; v-model=&quot;intro&quot;&gt;&lt;/textarea&gt;
+        &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;div class=&quot;result&quot;&gt;
+        &lt;ul&gt;
+          &lt;li&gt;用户名： &#123;&#123; username &#125;&#125;&lt;/li&gt;
+          &lt;li&gt;性别：&#123;&#123; gender &#125;&#125;&lt;/li&gt;
+          &lt;li&gt;兴趣：&#123;&#123; interests &#125;&#125;&lt;/li&gt;
+          &lt;li&gt;职业：&#123;&#123; occupation &#125;&#125;&lt;/li&gt;
+          &lt;li&gt;自我介绍： &#123;&#123; intro &#125;&#125;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">// 示例：表单事件处理
+const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      username: &quot;&quot;,
+      gender: &quot;&quot;,
+      interests: [],
+      occupation: &quot;&quot;,
+      intro: &quot;&quot;,
+    &#125;;
+  &#125;,
+  methods: &#123;
+    handleSubmit(e) &#123;
+      // e.preventDefault();  // 设置了修饰符就不需要了
+      console.log(
+        this.username,
+        this.gender,
+        this.interests,
+        this.occupation,
+        this.intro
+      );
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="在-inline-style-内联样式中绑定-data-数据"><a href="#在-inline-style-内联样式中绑定-data-数据" class="headerlink" title="在 inline-style 内联样式中绑定 data 数据"></a>在 inline-style 内联样式中绑定 data 数据</h3><pre><code class="vue"> &lt;div id=&quot;app&quot;&gt;
+      &lt;div&gt;
+        &lt;p :style=&quot;pStyle&quot;&gt;这是一个段落&lt;/p&gt;
+        &lt;button class=&quot;btn&quot; @click=&quot;fontSize += 1&quot;&gt;A&lt;/button&gt;
+        &lt;button class=&quot;btn&quot; @click=&quot;fontSize -= 1&quot;&gt;a&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      fontSize: 16,
+    &#125;;
+  &#125;,
+  computed: &#123;
+    pStyle() &#123;
+      return &#123;
+        color: &quot;white&quot;,
+        fontSize: this.fontSize + &quot;px&quot;,
+      &#125;;
+    &#125;,
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<h3 id="根据条件添加或删除-class-样式"><a href="#根据条件添加或删除-class-样式" class="headerlink" title="根据条件添加或删除 class 样式"></a>根据条件添加或删除 class 样式</h3><blockquote>
+<p>就是切换class 名字  </p>
+</blockquote>
+<pre><code class="vue">    &lt;div id=&quot;app&quot;&gt;
+      &lt;p :class=&quot;[textClass, stateClass, &#123; hide: isHidden &#125;]&quot;&gt;
+        这是一个段落
+      &lt;/p&gt;
+      &lt;button @click=&quot;isHidden = !isHidden&quot;&gt;切换状态&lt;/button&gt;
+    &lt;/div&gt;
+</code></pre>
+<pre><code class="js">const app = Vue.createApp(&#123;
+  data() &#123;
+    return &#123;
+      textClass: &quot;text-blue&quot;,
+      stateClass: &quot;danger&quot;,
+      isHidden: false,
+    &#125;;
+  &#125;,
+&#125;);
+app.mount(&quot;#app&quot;);
+</code></pre>
+<pre><code class="css">* &#123;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, &quot;PingFang SC&quot;, &quot;Microsoft Yahei&quot;, sans-serif;
+&#125;
+
+body &#123;
+  background-color: #0f141c;
+  opacity: 1;
+  background-image: radial-gradient(
+    #212943 0.6000000000000001px,
+    #0f141c 0.6000000000000001px
+  );
+  background-size: 12px 12px;
+  color: white;
+&#125;
+
+#app &#123;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+&#125;
+
+.text-blue &#123;
+  color: hsl(210, 80%, 70%);
+&#125;
+
+.danger &#123;
+  color: hsl(0, 80%, 70%);
+&#125;
+
+.hide &#123;
+  display: none;
+&#125;
+
+button &#123;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    hsl(240deg, 50%, 50%),
+    hsl(280deg, 50%, 50%)
+  );
+  padding: 12px 18px;
+  margin-top: 12px;
+  border-radius: 4px;
+  color: white;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 翌冰之
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
