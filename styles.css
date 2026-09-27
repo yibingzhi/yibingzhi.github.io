@@ -420,3 +420,28 @@ button { font: inherit; color: inherit; }
   .channel__desc { min-height: 0; }
   .footer__legal { flex-direction: column; }
 }
+
+/* ================= 标题字体 · 思源宋体 (Noto Serif SC) =================
+   Subset web fonts, OFL 1.1 — see assets/fonts/OFL-NotoSerifSC.txt */
+@font-face {
+  font-family: "ZT Serif Name"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("assets/fonts/noto-serif-sc-700-name.woff2") format("woff2");
+}
+@font-face {
+  font-family: "ZT Serif Head"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("assets/fonts/noto-serif-sc-600-headings.woff2") format("woff2");
+}
+:root { --font-serif-fallback: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif; }
+.hero__name {
+  font-family: "ZT Serif Name", var(--font-serif-fallback);
+  font-weight: 700; letter-spacing: 0.06em;
+  /* 墨色 → 墨青，细微的渐变 */
+  background: linear-gradient(120deg, var(--text) 0%, var(--text) 38%, var(--accent) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  padding-bottom: .04em; width: fit-content;
+}
+.section__head h2 {
+  font-family: "ZT Serif Head", var(--font-serif-fallback);
+  font-weight: 600; letter-spacing: 0.04em;
+}
